@@ -1,0 +1,1097 @@
+/* ===========================================
+   CODEMASTER LANDING PAGE STYLES
+   Bluish color palette with Poppins font
+   
+   This CSS file is organized with detailed comments
+   to help beginners understand each section
+   =========================================== */
+
+/* 
+=== CSS VARIABLES (CUSTOM PROPERTIES) ===
+Variables allow us to reuse values throughout our CSS.
+They make it easy to change colors, spacing, etc. in one place.
+Naming convention: 
+  - Use descriptive names
+  - Use hyphens for multiple words
+  - Group related variables together
+*/
+
+:root {
+    /* 
+    PRIMARY COLOR PALETTE - Main blues for the design
+    --primary: Main brand color used for buttons, links
+    --primary-light: Lighter version for hover effects
+    --primary-dark: Darker version for active states
+    --primary-extra-light: Very light version for backgrounds
+    */
+    --primary: #4361ee;        /* Bright blue - main action color */
+    --primary-light: #4895ef;  /* Lighter blue - hover states */
+    --primary-dark: #3a0ca3;   /* Deep purple-blue - headings */
+    --primary-extra-light: #e0e7ff; /* Very light blue - backgrounds */
+    
+    /* 
+    SECONDARY/ACCENT COLORS - For variety and emphasis
+    --secondary: Complementary color to primary
+    --secondary-light: Lighter accent color
+    --accent: Bright color for highlights
+    --accent-dark: Darker accent for contrast
+    */
+    --secondary: #7209b7;      /* Purple - secondary brand color */
+    --secondary-light: #9d4edd; /* Light purple - accents */
+    --accent: #4cc9f0;         /* Bright cyan - highlights, icons */
+    --accent-dark: #3a86ff;    /* Blue accent - special elements */
+    
+    /* 
+    NEUTRAL COLORS - For text, backgrounds, borders
+    --light: Main background color
+    --light-gray: Light borders, subtle backgrounds
+    --medium-gray: Secondary text, disabled states
+    --dark: Primary text color
+    --dark-gray: Secondary text, less important content
+    */
+    --light: #f8f9fa;          /* Off-white - main background */
+    --light-gray: #e9ecef;     /* Light gray - borders, cards */
+    --medium-gray: #adb5bd;    /* Medium gray - secondary text */
+    --dark: #212529;           /* Near black - main text */
+    --dark-gray: #495057;      /* Dark gray - subheadings */
+    
+    /* 
+    STATUS COLORS - For alerts, success, warnings
+    Used for form validation, notifications, etc.
+    */
+    --success: #38b000;        /* Green - success messages */
+    --warning: #ff9e00;        /* Orange - warnings */
+    --error: #f72585;          /* Pink - errors, delete actions */
+    
+    /* 
+    TYPOGRAPHY VARIABLES
+    --font-main: Primary font family for entire site
+    */
+    --font-main: 'Poppins', sans-serif; /* Google Font */
+    
+    /* 
+    SPACING VARIABLES - For consistent spacing throughout
+    Naming: --spacing-[size] where size indicates relative space
+    Used for padding, margins, gaps between elements
+    */
+    --spacing-xs: 0.5rem;   /* 8px - Very small spaces */
+    --spacing-sm: 1rem;     /* 16px - Small spaces */
+    --spacing-md: 1.5rem;   /* 24px - Medium spaces */
+    --spacing-lg: 2rem;     /* 32px - Large spaces */
+    --spacing-xl: 3rem;     /* 48px - Extra large spaces */
+    --spacing-xxl: 4rem;    /* 64px - Very large spaces */
+    
+    /* 
+    BORDER RADIUS VARIABLES - For rounded corners
+    Used for buttons, cards, containers
+    */
+    --radius-sm: 5px;       /* Small rounding */
+    --radius-md: 10px;      /* Medium rounding (default for buttons) */
+    --radius-lg: 15px;      /* Large rounding (cards, containers) */
+    --radius-full: 50%;     /* Perfect circles (avatars, icons) */
+    
+    /* 
+    SHADOW VARIABLES - For depth and elevation
+    Used to create visual hierarchy
+    */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);    /* Small shadow - subtle elevation */
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);   /* Medium shadow - cards, buttons */
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15); /* Large shadow - hero, modals */
+    --shadow-inset: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow - inputs */
+}
+
+/* 
+=== RESET & BASE STYLES ===
+These styles apply to ALL elements on the page
+Resets browser defaults for consistent styling
+*/
+* {
+    margin: 0;                /* Remove default margin */
+    padding: 0;               /* Remove default padding */
+    box-sizing: border-box;   /* Include padding/border in element's width */
+}
+
+/* 
+HTML element styling
+scroll-behavior: smooth enables smooth scrolling when clicking anchor links
+*/
+html {
+    scroll-behavior: smooth;  /* Smooth scrolling for anchor links */
+}
+
+/* 
+BODY element - main styling for entire page
+These are the default styles that apply unless overridden
+*/
+body {
+    font-family: var(--font-main);   /* Use Poppins font */
+    font-weight: 400;                /* Regular font weight */
+    line-height: 1.6;                /* Space between lines of text */
+    color: var(--dark);              /* Text color using dark variable */
+    background-color: var(--light);  /* Background color using light variable */
+    overflow-x: hidden;              /* Prevent horizontal scrolling */
+}
+
+/* 
+CONTAINER class - centers content and adds consistent padding
+Used on multiple sections throughout the page
+*/
+.container {
+    width: 100%;                    /* Full width */
+    max-width: 1200px;              /* Maximum width on large screens */
+    margin: 0 auto;                 /* Center horizontally */
+    padding: 0 var(--spacing-md);   /* Side padding using medium spacing */
+}
+
+/* 
+=== TYPOGRAPHY STYLES ===
+Headings and text styling
+*/
+
+/* 
+Heading styles - h1, h2, h3, h4
+Notice the cascade: all headings get these styles, then we override for specific ones
+*/
+h1, h2, h3, h4 {
+    font-weight: 700;               /* Bold font weight */
+    line-height: 1.2;               /* Tighter line height for headings */
+    margin-bottom: var(--spacing-sm); /* Bottom margin using small spacing */
+}
+
+/* 
+Individual heading sizes
+Using rem units for scalability (relative to root font size)
+*/
+h1 {
+    font-size: 3.5rem;  /* 56px - Main page title */
+}
+
+h2 {
+    font-size: 2.5rem;  /* 40px - Section titles */
+}
+
+h3 {
+    font-size: 1.5rem;  /* 24px - Card titles, smaller headings */
+}
+
+/* 
+Paragraph styling
+.color: Uses dark-gray variable for less contrast than headings
+*/
+p {
+    margin-bottom: var(--spacing-sm); /* Bottom margin */
+    color: var(--dark-gray);          /* Color using dark-gray variable */
+}
+
+/* 
+HIGHLIGHT class - used to emphasize text
+Applied to specific words within headings
+*/
+.highlight {
+    color: var(--primary);  /* Uses primary blue color */
+}
+
+/* 
+SECTION TITLE and SUBTITLE classes
+Used for consistent section headings throughout the page
+*/
+.section-title {
+    text-align: center;                /* Center align */
+    margin-bottom: var(--spacing-sm);  /* Bottom margin */
+    color: var(--primary-dark);        /* Color using primary-dark variable */
+}
+
+.section-subtitle {
+    text-align: center;                /* Center align */
+    max-width: 700px;                  /* Limit width for readability */
+    margin: 0 auto var(--spacing-xl);  /* Center with bottom margin */
+    color: var(--medium-gray);         /* Color using medium-gray variable */
+}
+
+/* 
+=== BUTTON STYLES ===
+Reusable button classes for different purposes
+*/
+
+/* 
+Base button class - all buttons start with these styles
+.btn is a class that can be combined with other classes (btn-primary, etc.)
+*/
+.btn {
+    display: inline-block;           /* Allows setting width/height */
+    padding: 0.8rem 1.8rem;          /* Top/bottom and left/right padding */
+    border-radius: var(--radius-md); /* Rounded corners using medium radius */
+    font-weight: 600;                /* Semi-bold font */
+    font-size: 1rem;                 /* Base font size */
+    text-decoration: none;           /* Remove underline from links */
+    cursor: pointer;                 /* Show hand cursor on hover */
+    transition: all 0.3s ease;       /* Smooth transition for hover effects */
+    border: 2px solid transparent;   /* Invisible border (will be colored by specific classes) */
+    text-align: center;              /* Center text */
+}
+
+/* 
+PRIMARY BUTTON - main call-to-action buttons
+Uses primary color variables
+*/
+.btn-primary {
+    background-color: var(--primary);  /* Background using primary blue */
+    color: white;                      /* White text for contrast */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);  /* Darker blue on hover */
+    transform: translateY(-3px);            /* Lift button up slightly */
+    box-shadow: var(--shadow-md);           /* Add shadow for depth */
+}
+
+/* 
+OUTLINE BUTTON - secondary style
+Transparent with colored border
+*/
+.btn-outline {
+    background-color: transparent;     /* No background */
+    color: var(--primary);             /* Text color using primary blue */
+    border-color: var(--primary);      /* Border color using primary blue */
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);  /* Fill with blue on hover */
+    color: white;                      /* Change text to white */
+    transform: translateY(-3px);       /* Lift button */
+    box-shadow: var(--shadow-md);      /* Add shadow */
+}
+
+/* 
+NAVIGATION BUTTON - smaller version for nav bar
+*/
+.btn-nav {
+    padding: 0.6rem 1.5rem;  /* Smaller padding than regular buttons */
+    margin-left: var(--spacing-sm);  /* Space from other nav items */
+}
+
+/* 
+FULL WIDTH BUTTON - spans entire container
+Used in forms
+*/
+.btn-full {
+    width: 100%;        /* Full width of parent */
+    padding: 1rem;      /* Larger padding for touch targets */
+    font-size: 1.1rem;  /* Slightly larger text */
+}
+
+/* 
+=== NAVIGATION BAR ===
+Fixed header at top of page
+*/
+
+.navbar {
+    background-color: white;           /* White background */
+    padding: 1.2rem 0;                 /* Top/bottom padding */
+    position: fixed;                   /* Stays at top when scrolling */
+    top: 0;                            /* Position at very top */
+    left: 0;                           /* Align to left edge */
+    width: 100%;                       /* Full width */
+    z-index: 1000;                     /* Ensure it's above other content */
+    box-shadow: var(--shadow-sm);      /* Subtle shadow for depth */
+}
+
+/* 
+Navigation container - flexbox for horizontal layout
+*/
+.nav-container {
+    display: flex;                     /* Enable flexbox */
+    justify-content: space-between;    /* Space between logo and menu */
+    align-items: center;               /* Center items vertically */
+}
+
+/* 
+LOGO styling - brand name and icon
+*/
+.logo {
+    display: flex;                     /* Flexbox for icon and text */
+    align-items: center;               /* Center vertically */
+    text-decoration: none;             /* Remove underline */
+    color: var(--primary-dark);        /* Color using primary-dark */
+    font-size: 1.8rem;                 /* Larger font size */
+    font-weight: 700;                  /* Bold font */
+}
+
+.logo i {
+    margin-right: 0.5rem;              /* Space between icon and text */
+    color: var(--primary);             /* Icon color using primary blue */
+    font-size: 2rem;                   /* Larger icon */
+}
+
+/* 
+NAVIGATION MENU - list of links
+*/
+.nav-menu {
+    display: flex;                     /* Horizontal layout */
+    list-style: none;                  /* Remove bullet points */
+}
+
+/* 
+NAVIGATION LINK - individual menu items
+*/
+.nav-link {
+    text-decoration: none;             /* Remove underline */
+    color: var(--dark);                /* Text color using dark variable */
+    font-weight: 500;                  /* Medium font weight */
+    padding: 0.5rem 1.2rem;            /* Clickable area padding */
+    border-radius: var(--radius-md);   /* Rounded corners */
+    transition: all 0.3s ease;         /* Smooth hover transition */
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary);             /* Change text to blue */
+    background-color: var(--primary-extra-light);  /* Light blue background */
+}
+
+/* 
+HAMBURGER MENU - for mobile navigation
+Hidden on desktop, shown on mobile
+*/
+.hamburger {
+    display: none;                     /* Hidden by default (shown on mobile) */
+    cursor: pointer;                   /* Show pointer cursor */
+}
+
+/* 
+Hamburger menu bars - the three lines
+*/
+.bar {
+    display: block;                    /* Each bar is a block element */
+    width: 25px;                       /* Width of each bar */
+    height: 3px;                       /* Height of each bar */
+    margin: 5px auto;                  /* Space between bars */
+    background-color: var(--dark);     /* Color using dark variable */
+    transition: all 0.3s ease;         /* Animation for transform to X */
+}
+
+/* 
+=== HERO SECTION ===
+First content section below navbar
+*/
+
+.hero {
+    padding-top: 8rem;                 /* Space for fixed navbar */
+    padding-bottom: var(--spacing-xxl); /* Bottom padding using extra large spacing */
+    background: linear-gradient(135deg, var(--light) 0%, var(--primary-extra-light) 100%); /* Gradient background */
+}
+
+/* 
+Hero container - flexbox for two-column layout
+*/
+.hero-container {
+    display: flex;                     /* Enable flexbox */
+    align-items: center;               /* Center items vertically */
+    justify-content: space-between;    /* Space between content and image */
+    gap: var(--spacing-xl);            /* Gap between columns using extra large spacing */
+}
+
+/* 
+Hero content column - text and buttons
+*/
+.hero-content {
+    flex: 1;                           /* Take available space */
+}
+
+.hero-title {
+    font-size: 3.2rem;                 /* Large font size */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+    line-height: 1.1;                  /* Tight line height */
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;                 /* Slightly larger than normal text */
+    margin-bottom: var(--spacing-lg);  /* Bottom margin using large spacing */
+    max-width: 600px;                  /* Limit width for readability */
+}
+
+/* 
+Hero buttons container
+*/
+.hero-buttons {
+    display: flex;                     /* Horizontal button layout */
+    gap: var(--spacing-md);            /* Space between buttons using medium spacing */
+    margin-bottom: var(--spacing-xl);  /* Bottom margin using extra large spacing */
+}
+
+/* 
+Hero stats - numbers showing success metrics
+*/
+.hero-stats {
+    display: flex;                     /* Horizontal layout */
+    gap: var(--spacing-xl);            /* Space between stats using extra large spacing */
+}
+
+.stat h3 {
+    font-size: 2.2rem;                 /* Large number size */
+    color: var(--primary);             /* Blue color using primary variable */
+    margin-bottom: 0.2rem;             /* Small bottom margin */
+}
+
+.stat p {
+    font-size: 0.9rem;                 /* Small text */
+    color: var(--medium-gray);         /* Color using medium-gray variable */
+    text-transform: uppercase;         /* ALL CAPS */
+    letter-spacing: 1px;               /* Space between letters */
+    margin-bottom: 0;                  /* Remove default paragraph margin */
+}
+
+/* 
+Hero image column
+*/
+.hero-image {
+    flex: 1;                           /* Take available space */
+    border-radius: var(--radius-lg);   /* Rounded corners using large radius */
+    overflow: hidden;                  /* Hide image overflow from rounded corners */
+    box-shadow: var(--shadow-lg);      /* Large shadow for depth */
+}
+
+.hero-image img {
+    width: 100%;                       /* Full width of container */
+    height: auto;                      /* Maintain aspect ratio */
+    display: block;                    /* Remove bottom space under image */
+    transition: transform 0.5s ease;   /* Smooth zoom transition */
+}
+
+.hero-image:hover img {
+    transform: scale(1.03);            /* Slight zoom on hover */
+}
+
+/* 
+=== SECTION BASE STYLES ===
+Applied to all main content sections
+*/
+.section {
+    padding: var(--spacing-xxl) 0;     /* Top/bottom padding using extra large spacing */
+}
+
+/* 
+GRID SECTION - Courses section with grid layout
+*/
+.grid-section {
+    background-color: white;           /* White background */
+}
+
+/* 
+Grid container - creates responsive grid layout
+grid-template-columns: Creates as many columns as fit (min 280px wide)
+gap: Space between grid items
+*/
+.grid-container {
+    display: grid;                                         /* Enable CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive columns */
+    gap: var(--spacing-lg);                                /* Gap between items using large spacing */
+}
+
+/* 
+Grid item - each course card container
+*/
+.grid-item {
+    transition: transform 0.3s ease;   /* Smooth lift animation */
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);      /* Lift item on hover */
+}
+
+/* 
+Course card - individual course display
+*/
+.course-card {
+    background-color: white;           /* White background */
+    border-radius: var(--radius-lg);   /* Rounded corners using large radius */
+    padding: var(--spacing-lg);        /* Padding using large spacing */
+    box-shadow: var(--shadow-md);      /* Medium shadow for depth */
+    height: 100%;                      /* Full height of grid cell */
+    transition: all 0.3s ease;         /* Smooth hover transition */
+    border-top: 4px solid var(--primary); /* Blue accent border at top */
+}
+
+.course-card:hover {
+    box-shadow: var(--shadow-lg);      /* Larger shadow on hover */
+}
+
+/* 
+Course icon - technology logos
+*/
+.course-icon {
+    font-size: 2.5rem;                 /* Large icon size */
+    color: var(--primary);             /* Blue color using primary variable */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+}
+
+.course-card h3 {
+    margin-bottom: var(--spacing-sm);  /* Bottom margin using small spacing */
+    color: var(--primary-dark);        /* Color using primary-dark variable */
+}
+
+/* 
+Course info - duration and difficulty
+*/
+.course-info {
+    display: flex;                     /* Horizontal layout */
+    justify-content: space-between;    /* Space items apart */
+    margin-top: var(--spacing-md);     /* Top margin using medium spacing */
+    font-size: 0.9rem;                 /* Smaller text */
+    color: var(--medium-gray);         /* Color using medium-gray variable */
+}
+
+.course-info span {
+    display: flex;                     /* Flexbox for icon and text */
+    align-items: center;               /* Center vertically */
+    gap: 0.3rem;                       /* Small gap between icon and text */
+}
+
+/* 
+=== FLEXBOX SECTION ===
+Why Choose Us section demonstrating flexbox
+*/
+.flex-section {
+    background-color: var(--light);    /* Light background using light variable */
+}
+
+/* 
+Flex container - horizontal layout that wraps on smaller screens
+*/
+.flex-container {
+    display: flex;                     /* Enable flexbox */
+    flex-wrap: wrap;                   /* Allow items to wrap to next line */
+    justify-content: center;           /* Center items horizontally */
+    gap: var(--spacing-lg);            /* Gap between items using large spacing */
+}
+
+/* 
+Flex item - each feature card container
+flex: 1 allows items to grow equally
+min-width: ensures items don't get too small
+max-width: prevents items from getting too wide
+*/
+.flex-item {
+    flex: 1;                           /* Grow to fill space */
+    min-width: 250px;                  /* Minimum width before wrapping */
+    max-width: 300px;                  /* Maximum width */
+}
+
+/* 
+Feature card - individual feature display
+*/
+.feature-card {
+    background-color: white;           /* White background */
+    border-radius: var(--radius-lg);   /* Rounded corners using large radius */
+    padding: var(--spacing-lg);        /* Padding using large spacing */
+    text-align: center;                /* Center align content */
+    box-shadow: var(--shadow-md);      /* Medium shadow for depth */
+    height: 100%;                      /* Full height of container */
+    transition: all 0.3s ease;         /* Smooth hover transition */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);       /* Lift card on hover */
+    box-shadow: var(--shadow-lg);      /* Larger shadow on hover */
+}
+
+/* 
+Feature icon - circular icon background
+*/
+.feature-icon {
+    font-size: 2.5rem;                 /* Large icon size */
+    color: var(--primary);             /* Blue color using primary variable */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+    background-color: var(--primary-extra-light); /* Light blue background */
+    width: 70px;                       /* Fixed width */
+    height: 70px;                      /* Fixed height (creates circle) */
+    display: flex;                     /* Flexbox to center icon */
+    align-items: center;               /* Center vertically */
+    justify-content: center;           /* Center horizontally */
+    border-radius: var(--radius-full); /* Perfect circle */
+    margin: 0 auto var(--spacing-md);  /* Center horizontally with bottom margin */
+}
+
+/* 
+=== TABLE SECTION ===
+Pricing table demonstration
+*/
+.table-section {
+    background-color: white;           /* White background */
+}
+
+/* 
+Table container - allows horizontal scrolling on mobile
+*/
+.table-container {
+    overflow-x: auto;                  /* Horizontal scroll on small screens */
+    border-radius: var(--radius-lg);   /* Rounded corners using large radius */
+    box-shadow: var(--shadow-md);      /* Medium shadow for depth */
+}
+
+/* 
+Pricing table - comparison table
+*/
+.pricing-table {
+    width: 100%;                       /* Full width of container */
+    border-collapse: collapse;         /* Remove space between borders */
+    background-color: white;           /* White background */
+}
+
+/* 
+Table header - column titles
+*/
+.pricing-table thead {
+    background-color: var(--primary-dark); /* Dark blue background */
+    color: white;                       /* White text */
+}
+
+.pricing-table th {
+    padding: var(--spacing-lg);        /* Padding using large spacing */
+    text-align: center;                /* Center align text */
+    font-weight: 600;                  /* Semi-bold font */
+}
+
+.pricing-table th:first-child {
+    text-align: left;                  /* First column aligned left */
+}
+
+/* 
+Table body rows
+*/
+.pricing-table tbody tr {
+    border-bottom: 1px solid var(--light-gray); /* Light gray border between rows */
+}
+
+.pricing-table td {
+    padding: var(--spacing-md);        /* Padding using medium spacing */
+    text-align: center;                /* Center align content */
+}
+
+.pricing-table td:first-child {
+    text-align: left;                  /* First column aligned left */
+    font-weight: 500;                  /* Medium font weight */
+}
+
+/* 
+Checkmark and X icons in table
+*/
+.pricing-table i.fa-check {
+    color: var(--success);             /* Green checkmark */
+    font-size: 1.2rem;                 /* Slightly larger */
+}
+
+.pricing-table i.fa-times {
+    color: var(--error);               /* Red X mark */
+    font-size: 1.2rem;                 /* Slightly larger */
+}
+
+/* 
+Price row - highlighted row with prices
+*/
+.price-row {
+    background-color: var(--primary-extra-light); /* Light blue background */
+}
+
+.price {
+    font-size: 2rem;                   /* Large font for prices */
+    font-weight: 700;                  /* Bold font */
+    color: var(--primary-dark);        /* Dark blue color */
+}
+
+.price span {
+    font-size: 1rem;                   /* Smaller font for "/month" */
+    font-weight: 400;                  /* Regular font weight */
+    color: var(--medium-gray);         /* Gray color */
+}
+
+/* 
+Action row - buttons at bottom of table
+*/
+.action-row td {
+    padding: var(--spacing-lg);        /* Larger padding using large spacing */
+}
+
+/* 
+=== FORM SECTION ===
+Contact form with gradient background
+*/
+.form-section {
+    background: linear-gradient(135deg, var(--primary-extra-light) 0%, white 100%); /* Blue to white gradient */
+}
+
+/* 
+Form container - two-column layout (form and image)
+*/
+.form-container {
+    display: flex;                     /* Enable flexbox */
+    align-items: center;               /* Center items vertically */
+    gap: var(--spacing-xl);            /* Gap between columns using extra large spacing */
+    background-color: white;           /* White background */
+    border-radius: var(--radius-lg);   /* Rounded corners using large radius */
+    overflow: hidden;                  /* Hide image overflow from rounded corners */
+    box-shadow: var(--shadow-lg);      /* Large shadow for depth */
+}
+
+.form-content {
+    flex: 1;                           /* Take available space */
+    padding: var(--spacing-xl);        /* Padding using extra large spacing */
+}
+
+.form-image {
+    flex: 1;                           /* Take available space */
+}
+
+.form-image img {
+    width: 100%;                       /* Full width of container */
+    height: 100%;                      /* Full height of container */
+    object-fit: cover;                 /* Crop image to fill container */
+    display: block;                    /* Remove bottom space */
+}
+
+/* 
+Contact form styling
+*/
+.contact-form {
+    margin-top: var(--spacing-lg);     /* Top margin using large spacing */
+}
+
+/* 
+Form group - wrapper for label and input
+*/
+.form-group {
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+}
+
+.form-group label {
+    display: block;                    /* Make label take full width */
+    margin-bottom: 0.5rem;             /* Space between label and input */
+    font-weight: 500;                  /* Medium font weight */
+    color: var(--dark-gray);           /* Color using dark-gray variable */
+}
+
+/* 
+Form inputs, selects, and textareas
+Shared styles for all form controls
+*/
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;                       /* Full width of container */
+    padding: 0.9rem 1rem;              /* Padding inside field */
+    border: 1px solid var(--light-gray); /* Light gray border */
+    border-radius: var(--radius-md);   /* Rounded corners using medium radius */
+    font-family: var(--font-main);     /* Use Poppins font */
+    font-size: 1rem;                   /* Base font size */
+    transition: all 0.3s ease;         /* Smooth focus transition */
+}
+
+/* 
+Focus state for form controls
+*/
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;                     /* Remove default browser outline */
+    border-color: var(--primary);      /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); /* Blue glow effect */
+}
+
+/* 
+Checkbox group - for newsletter opt-in
+*/
+.checkbox-group {
+    display: flex;                     /* Horizontal layout */
+    align-items: center;               /* Center vertically */
+    gap: 0.5rem;                       /* Small gap between checkbox and label */
+}
+
+.checkbox-group input {
+    width: auto;                       /* Don't force full width */
+}
+
+.checkbox-group label {
+    margin-bottom: 0;                  /* Remove bottom margin */
+    font-weight: 400;                  /* Regular font weight */
+    font-size: 0.9rem;                 /* Slightly smaller text */
+}
+
+/* 
+=== FOOTER ===
+Site footer with multiple columns
+*/
+.footer {
+    background-color: var(--primary-dark); /* Dark blue background */
+    color: white;                       /* White text */
+    padding: var(--spacing-xxl) 0 var(--spacing-lg); /* Top/bottom padding */
+}
+
+/* 
+Footer content - grid layout for columns
+*/
+.footer-content {
+    display: grid;                     /* Enable CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: var(--spacing-xl);            /* Gap between columns using extra large spacing */
+    margin-bottom: var(--spacing-xl);  /* Bottom margin using extra large spacing */
+}
+
+/* 
+Footer logo - same as header but white
+*/
+.footer-logo {
+    display: flex;                     /* Flexbox for icon and text */
+    align-items: center;               /* Center vertically */
+    text-decoration: none;             /* Remove underline */
+    color: white;                      /* White text */
+    font-size: 1.8rem;                 /* Larger font size */
+    font-weight: 700;                  /* Bold font */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+}
+
+.footer-logo i {
+    margin-right: 0.5rem;              /* Space between icon and text */
+    color: var(--accent);              /* Accent color for icon */
+    font-size: 2rem;                   /* Larger icon */
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.8);  /* Semi-transparent white */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+}
+
+.footer-col h3 {
+    color: white;                      /* White text */
+    margin-bottom: var(--spacing-md);  /* Bottom margin using medium spacing */
+    font-size: 1.3rem;                 /* Slightly larger than normal */
+}
+
+/* 
+Footer links list
+*/
+.footer-links {
+    list-style: none;                  /* Remove bullet points */
+}
+
+.footer-links li {
+    margin-bottom: 0.7rem;             /* Space between links */
+}
+
+.footer-links a {
+    text-decoration: none;             /* Remove underline */
+    color: rgba(255, 255, 255, 0.8);  /* Semi-transparent white */
+    transition: all 0.3s ease;         /* Smooth hover transition */
+}
+
+.footer-links a:hover {
+    color: var(--accent);              /* Change to accent color on hover */
+    padding-left: 0.5rem;              /* Indent text on hover */
+}
+
+/* 
+Contact info in footer
+*/
+.contact-info {
+    list-style: none;                  /* Remove bullet points */
+}
+
+.contact-info li {
+    margin-bottom: 0.8rem;             /* Space between items */
+    display: flex;                     /* Flexbox for icon and text */
+    align-items: flex-start;           /* Align to top (icons might be taller) */
+    gap: 0.8rem;                       /* Space between icon and text */
+    color: rgba(255, 255, 255, 0.8);  /* Semi-transparent white */
+}
+
+.contact-info i {
+    color: var(--accent);              /* Accent color for icons */
+    margin-top: 0.2rem;                /* Slight vertical adjustment */
+}
+
+/* 
+Social media links
+*/
+.social-links {
+    display: flex;                     /* Horizontal layout */
+    gap: var(--spacing-sm);            /* Space between icons using small spacing */
+    margin-top: var(--spacing-md);     /* Top margin using medium spacing */
+}
+
+.social-links a {
+    display: flex;                     /* Flexbox to center icon */
+    align-items: center;               /* Center vertically */
+    justify-content: center;           /* Center horizontally */
+    width: 40px;                       /* Fixed width */
+    height: 40px;                      /* Fixed height (creates circle) */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: var(--radius-full); /* Perfect circle */
+    color: white;                      /* White icons */
+    text-decoration: none;             /* Remove underline */
+    transition: all 0.3s ease;         /* Smooth hover transition */
+}
+
+.social-links a:hover {
+    background-color: var(--accent);   /* Change to accent color on hover */
+    transform: translateY(-3px);       /* Lift button on hover */
+}
+
+/* 
+Footer bottom - copyright and legal links
+*/
+.footer-bottom {
+    text-align: center;                /* Center align */
+    padding-top: var(--spacing-lg);    /* Top padding using large spacing */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent border */
+    color: rgba(255, 255, 255, 0.7);  /* Semi-transparent white */
+    font-size: 0.9rem;                 /* Smaller text */
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.9);  /* Slightly brighter white */
+    text-decoration: none;             /* Remove underline */
+    transition: color 0.3s ease;       /* Smooth color transition */
+}
+
+.footer-bottom a:hover {
+    color: var(--accent);              /* Change to accent color on hover */
+}
+
+/* 
+=== RESPONSIVE DESIGN ===
+Media queries for different screen sizes
+*/
+
+/* 
+For tablets and smaller laptops (max-width: 992px)
+*/
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;  /* Smaller main title */
+    }
+    
+    h2 {
+        font-size: 2.2rem;  /* Smaller section titles */
+    }
+    
+    /* Hero section becomes single column */
+    .hero-container {
+        flex-direction: column;  /* Stack content vertically */
+        text-align: center;      /* Center align text */
+    }
+    
+    .hero-stats {
+        justify-content: center; /* Center stats horizontally */
+    }
+    
+    /* Form section becomes single column */
+    .form-container {
+        flex-direction: column;  /* Stack form and image vertically */
+    }
+    
+    .form-image {
+        display: none;           /* Hide image on smaller screens */
+    }
+}
+
+/* 
+For mobile phones (max-width: 768px)
+*/
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.3rem;  /* Even smaller main title */
+    }
+    
+    h2 {
+        font-size: 1.8rem;  /* Even smaller section titles */
+    }
+    
+    /* Show hamburger menu, hide regular nav */
+    .hamburger {
+        display: block;      /* Show hamburger menu */
+    }
+    
+    /* Position nav menu off-screen by default */
+    .nav-menu {
+        position: fixed;     /* Fixed position for mobile menu */
+        left: -100%;         /* Hide off-screen to the left */
+        top: 70px;           /* Position below navbar */
+        flex-direction: column; /* Stack items vertically */
+        background-color: white; /* White background */
+        width: 100%;         /* Full width */
+        text-align: center;  /* Center align text */
+        transition: 0.3s;    /* Smooth slide animation */
+        box-shadow: var(--shadow-md); /* Shadow for depth */
+        padding: var(--spacing-lg) 0; /* Padding using large spacing */
+        z-index: 999;        /* Below navbar but above content */
+    }
+    
+    /* When active class is added (via JavaScript), slide in */
+    .nav-menu.active {
+        left: 0;             /* Slide into view */
+    }
+    
+    /* Make nav links full width on mobile */
+    .nav-link {
+        display: block;      /* Full width block */
+        padding: 1rem;       /* Larger touch target */
+        margin: 0.5rem 0;    /* Vertical margin */
+    }
+    
+    /* Stack hero buttons vertically */
+    .hero-buttons {
+        flex-direction: column;  /* Stack buttons */
+        align-items: center;     /* Center buttons */
+    }
+    
+    /* Stack hero stats vertically */
+    .hero-stats {
+        flex-direction: column;  /* Stack stats */
+        gap: var(--spacing-md);  /* Gap using medium spacing */
+    }
+    
+    /* Smaller table padding on mobile */
+    .pricing-table th,
+    .pricing-table td {
+        padding: var(--spacing-sm);  /* Padding using small spacing */
+    }
+    
+    .price {
+        font-size: 1.5rem;  /* Smaller price font */
+    }
+}
+
+/* 
+For very small phones (max-width: 576px)
+*/
+@media (max-width: 576px) {
+    .container {
+        padding: 0 var(--spacing-sm);  /* Smaller side padding */
+    }
+    
+    .section {
+        padding: var(--spacing-xl) 0;  /* Smaller section padding */
+    }
+    
+    .hero {
+        padding-top: 6rem;  /* Less space for navbar */
+    }
+    
+    .hero-title {
+        font-size: 2rem;    /* Smaller hero title */
+    }
+    
+    /* Single column grid on mobile */
+    .grid-container {
+        grid-template-columns: 1fr;  /* One column only */
+    }
+    
+    /* Single column flexbox on mobile */
+    .flex-container {
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;     /* Center items */
+    }
+    
+    .flex-item {
+        width: 100%;             /* Full width */
+        max-width: 100%;         /* No maximum width constraint */
+    }
+}
