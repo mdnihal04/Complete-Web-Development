@@ -1,6 +1,7 @@
 *{
     background-color: whitesmoke;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
     /* margin: 0; */
 }
 
@@ -11,6 +12,11 @@
     font-size: 40px;
 }
 
+.card-section #para{
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
 .card-container{
     display: flex;
     gap: 30px;
@@ -18,8 +24,8 @@
 }
 
 .card{
-    width: 270px;
-    height: 460px;
+    width: 300px;
+    height: 490px;
     border: 2px solid rgb(221, 221, 220);
     border-radius: 10px;
     padding: 15px;
