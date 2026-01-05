@@ -1,15 +1,34 @@
 *{
     background-color: whitesmoke;
     font-family: "Poppins", sans-serif;
+    /* margin: 0; */
+}
+
+.card-section{
+    text-align: center;
+}
+.card-section h2{
+    font-size: 40px;
+}
+
+.card-container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card{
-    width: 300px;
+    width: 270px;
     border: 2px solid rgb(221, 221, 220);
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: 8px 8px 17px rgb(170, 170, 170);
+    padding: 15px;
+    box-shadow: 8px 8px 17px rgb(194, 193, 193);
+    text-align: left;
 
+}
+.card:hover{
+    box-shadow: 12px 12px 10px rgb(219, 219, 219);
+    cursor: pointer;
 }
 
 .card h3{
