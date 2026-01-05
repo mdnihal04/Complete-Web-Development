@@ -1,0 +1,24 @@
+*{
+    /* margin: 0; */
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-container{
+    display: flex;
+    background-color: aliceblue;
+    gap: 100px;
+    align-items: center;
+}
+
+.hero-container img{
+    width: 500px;
+    height: 300px;
+}
+
+.hero-container button{
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}

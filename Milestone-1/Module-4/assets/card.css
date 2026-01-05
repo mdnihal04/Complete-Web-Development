@@ -1,0 +1,33 @@
+*{
+    background-color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+}
+
+.card{
+    width: 300px;
+    border: 2px solid rgb(221, 221, 220);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 8px 8px 17px rgb(170, 170, 170);
+
+}
+
+.card h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.card button{
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    padding: 8px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
