@@ -1,4 +1,100 @@
 *{
     margin: 0;
-    font-family: "Poppins", sans-serif;
 }
+
+body{
+    margin-top: 22px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(253, 254, 255);
+}
+
+.team-section{
+    text-align: center;
+}
+.team-section .top{
+    font-size: 40px;
+}
+
+.team-section .para{
+    font-size: 18px;
+}
+.team-container{
+    margin: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.team{
+    width: 300px;
+    height: 420px;
+    border: 1px solid rgb(244, 247, 255);
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 8px 8px 17px rgb(215, 210, 233);
+    text-align: center;
+    text-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+.team:hover{
+    box-shadow: 8px 8px 17px rgb(164, 146, 233);
+}
+
+.team h2{
+    color: blue;
+    font-size: 26px;
+    margin: 5px 0px 5px 0px;
+}
+
+.team h4{
+    font-style: italic;
+    /* font-weight: 600; */
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.team p{
+    /* line-height: 1.1; */
+    margin-top: 5px;
+
+}
+.team img{
+    /* width: 100%; */
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 3px solid blue;
+ 
+    
+}
+
+
+
+.social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Space between icons */
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+        
+        .facebook { background-color: #0469ec; }
+        .twitter { background-color: #0196f3; }
+        .github { background-color: #1d1d1d; }
