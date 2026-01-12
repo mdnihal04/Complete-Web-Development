@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: rgb(242, 246, 250);
+    display: grid;
+    /* height: 1000px; */
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: 2fr repeat(6, 200);
+    gap: 3px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.wide-container{
+    
+}

@@ -1,0 +1,35 @@
+.container{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px) 50px 50px;
+}
+
+.box{
+    background-color: grey;
+    padding: 10px;
+}
+
+#sidebar{
+    grid-column: span 1;
+    grid-row: span 5;
+}
+
+.footer{
+    grid-column: span 3;
+}
+
+@media screen and (max-width: 576px){
+    .container{
+        display: grid;
+        gap: 3px;
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: repeat(3, 200px) 50px 50px; */
+    }
+
+    .container,
+    #sidebar{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
