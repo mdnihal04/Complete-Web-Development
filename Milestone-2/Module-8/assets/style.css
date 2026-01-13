@@ -29,6 +29,12 @@
     cursor: pointer;
 }
 
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .section-heading{
     max-width: 827px;
     text-align: center;
@@ -89,7 +95,7 @@ nav .menu a{
 #banner{
     margin: 47px 38px 0px 230px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -282,6 +288,13 @@ footer .footer-container{
 
 @media screen and (max-width: 576px){
 
+    header {
+    background: url(./images/header_bg.png), #fff8f3;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+}
+
     nav{
         flex-direction: column;
         gap: 20px;
@@ -290,6 +303,28 @@ footer .footer-container{
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
+}
+
+    #banner{
+        margin: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #banner .banner-content h1{
+        font-size: 48px;
+    }
+    .btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    }
+    
+    .btn-group{
+        justify-content: center;
+    }
+
+    #banner .banner-image img {
+        width: 100%;
 }
     #about,
     #skills,
