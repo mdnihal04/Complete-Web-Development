@@ -1,0 +1,8 @@
+.product-cart{
+    border: 2px solid black;
+    padding: 20px;
+}
+.products{
+    display: flex;
+    gap: 20px;
+}
