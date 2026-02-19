@@ -62,18 +62,19 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
         // 5-1 true==> alert ==> set Balance
         alert("Cashout Successful")
         setBalance(newBalance);
-        const history = document.getElementById("history-container");
-        // 2. Create new child div
-        const newHistory = document.createElement("div");
-        // 3. Add innerHtml in new div
-        newHistory.innerHTML=`
-         <div class="transaction-card p-5 bg-base-100">
-         Cashout Taka ${cashoutAmount} Success to
-         ${cashoutNumber} | at ${new Date()}
-         </div>`
+        addHistory("Cashout Completed", cashoutAmount)
+        // const history = document.getElementById("history-container");
+        // // 2. Create new child div
+        // const newHistory = document.createElement("div");
+        // // 3. Add innerHtml in new div
+        // newHistory.innerHTML=`
+        //  <div class="transaction-card p-5 bg-base-100">
+        //  Cashout Taka ${cashoutAmount} Success to
+        //  ${cashoutNumber} | at ${new Date()}
+        //  </div>`
 
-        // 4. Append child div to history/parent div
-        history.append(newHistory);
+        // // 4. Append child div to history/parent div
+        // history.append(newHistory);
     }else{
         // 5-2 false ==> show error ==> Return
         alert("Invalid Pin");

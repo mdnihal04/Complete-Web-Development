@@ -38,3 +38,76 @@ function showOnly(id){
     selected.classList.remove("hidden")
 
 }
+
+function addHistory(eventName, amount){
+    // let eventName = eventName
+    const history = document.getElementById("history-container");
+    const newHistory = document.createElement("div");
+
+    // const now = new Date();
+    // const time = now.toLocaleString("en-US", {
+    // day: "2-digit",
+    // month: "short",
+    // year: "numeric",
+    // hour: "2-digit",
+    // minute: "2-digit",
+    // hour12: true
+    // });
+
+
+    const now = new Date();
+    const inputDate = new Date(); // you can change this if needed
+
+    // Remove time part for correct comparison
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+
+    inputDate.setHours(0, 0, 0, 0);
+
+    let dayText;
+
+    if (inputDate.getTime() === today.getTime()) {
+    dayText = "Today";
+    } else if (inputDate.getTime() === yesterday.getTime()) {
+    dayText = "Yesterday";
+    } else {
+    dayText = inputDate.toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
+}
+
+    // Time part
+    const time = now.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true
+    });
+
+    console.log(dayText, time)
+    newHistory.innerHTML=  `
+        <div class="transaction-card p-5 bg-base-100 flex justify-between items-center rounded-xl">
+                <div class="left flex flex-row gap-2">
+                    <div class="w-11 p-2 bg-base-200 rounded-full flex justify-center items-center">
+                        <img src="./assets/opt-1.png" alt="">
+                    </div>
+                    <div>
+                        <h2 class="text- font-bold">${eventName} | TK ${amount}</h2>
+                        <p class="text-neutral/80">${dayText} ${time}</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="./assets/Frame.png" class="cursor-pointer" alt="">
+                </div>
+            </div>`
+    //  <div class="transaction-card p-5 bg-base-100">
+    //  Cashout Taka ${cashoutAmount} Success to
+    //  ${cashoutNumber} | at ${new Date()}
+    //  </div>`
+    
+    history.append(newHistory);
+}

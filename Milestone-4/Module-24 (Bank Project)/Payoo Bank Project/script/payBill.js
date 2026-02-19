@@ -23,8 +23,9 @@ document.getElementById("pay-money-btn").addEventListener("click", function(){
 
     const pin = getValueFromInput("pay-money-pin");
     if(pin === "2026"){
-        alert("Transfer Successful")
+        alert("Bill Paid Successful")
         setBalance(newBalance);
+        addHistory("Bill Paid", payAmount);
         // const history = document.getElementById("history-container");
         // const newHistory = document.createElement("div");
         // newHistory.innerHTML=`

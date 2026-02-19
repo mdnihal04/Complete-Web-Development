@@ -5,19 +5,23 @@ document.getElementById("bonus-btn").addEventListener("click", function(){
 
     const couponNumber = getValueFromInput("bonus-number");
     if(couponNumber===coupon1){
-        let offerBalance = getBalanace() + (getBalanace() * 0.05);
-        console.log(offerBalance)
+        let bonusAmount = getBalanace() * 0.05;
+        let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
+        addHistory("Bonus Added", bonusAmount);
+
     }
     else if(couponNumber===coupon2){
-        let offerBalance = getBalanace() + (getBalanace() * 0.1);
-        console.log(offerBalance)
+        let bonusAmount = getBalanace() * 0.1;
+        let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
+        addHistory("Bonus Added", bonusAmount);
     }
     else if(couponNumber===coupon3){
-        let offerBalance = getBalanace() + (getBalanace() * 0.2);
-        console.log(offerBalance)
+        let bonusAmount= getBalanace() * 0.2;
+        let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
+        addHistory("Bonus Added", bonusAmount);
     }else{
         alert("Invalid Coupon");
         return;
