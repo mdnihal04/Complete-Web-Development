@@ -170,7 +170,7 @@
         </div>
     </section>
 
-    <section id="pay-money" class="w-11/12 mx-auto py-5" >
+    <section id="pay-money" class="w-11/12 mx-auto py-5 hidden" >
         <h2 class="text-2xl font-bold mb-5">Pay Bill</h2>
         <div class="card bg-base-100 w-full shadow rounded-2xl">
             <div class="card-body">
@@ -204,8 +204,25 @@
     </section>
 
     <section id="history" class="w-11/12 mx-auto py-5 ">
-        <h2 class="text-2xl font-bold mb-5">Transactions</h2>
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold mb-5">Transactions</h2>
+            <p class="text-neutral/50">View All</p>
+        </div>
         <div id="history-container" class="space-y-5">
+            <div class="transaction-card p-5 bg-base-100 flex justify-between items-center">
+                <div class="left flex flex-row gap-2">
+                    <div class="w-11 p-2 bg-base-200 rounded-full flex justify-center items-center">
+                        <img src="./assets/opt-1.png" alt="">
+                    </div>
+                    <div>
+                        <h2 class="text- font-bold">Electricity Bill</h2>
+                        <p class="text-neutral/80">Today 01:44 AM</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="./assets/Frame.png" alt="">
+                </div>
+            </div>
             
         </div>
     </section>
