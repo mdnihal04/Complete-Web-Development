@@ -14,7 +14,7 @@ document.getElementById("login-btn").addEventListener("click",function(){
     
     
 
-    if(contactNumber=="01741815523" && pin=="2004"){
+    if(contactNumber=="01741815523" && pin=="2026"){
         // 3-1. true ==> alert ==> homepage
         alert("Login Success");
         window.location.assign("/home.html");
