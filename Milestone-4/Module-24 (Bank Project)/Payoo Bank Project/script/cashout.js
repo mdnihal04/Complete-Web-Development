@@ -62,7 +62,7 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
         // 5-1 true==> alert ==> set Balance
         alert("Cashout Successful")
         setBalance(newBalance);
-        addHistory("Cashout Completed", cashoutAmount)
+        addHistory("opt-2", "Cashout Completed", cashoutAmount)
         // const history = document.getElementById("history-container");
         // // 2. Create new child div
         // const newHistory = document.createElement("div");

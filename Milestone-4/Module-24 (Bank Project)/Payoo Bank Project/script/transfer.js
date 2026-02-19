@@ -19,7 +19,7 @@ document.getElementById("transfer-btn").addEventListener("click", function(){
     if(pin === "2026"){
         alert("Transfer Successful")
         setBalance(newBalance);
-        addHistory("Money Transferred", transferAmount);
+        addHistory("opt-3","Money Transferred", transferAmount);
         // const history = document.getElementById("history-container");
         // const newHistory = document.createElement("div");
         // newHistory.innerHTML=`

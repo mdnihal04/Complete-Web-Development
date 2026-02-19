@@ -8,20 +8,20 @@ document.getElementById("bonus-btn").addEventListener("click", function(){
         let bonusAmount = getBalanace() * 0.05;
         let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
-        addHistory("Bonus Added", bonusAmount);
+        addHistory("opt-4", "Bonus Added", bonusAmount);
 
     }
     else if(couponNumber===coupon2){
         let bonusAmount = getBalanace() * 0.1;
         let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
-        addHistory("Bonus Added", bonusAmount);
+        addHistory("opt-4", "Bonus Added", bonusAmount);
     }
     else if(couponNumber===coupon3){
         let bonusAmount= getBalanace() * 0.2;
         let offerBalance = getBalanace() + bonusAmount;
         setBalance(offerBalance);
-        addHistory("Bonus Added", bonusAmount);
+        addHistory("opt-4", "Bonus Added", bonusAmount);
     }else{
         alert("Invalid Coupon");
         return;

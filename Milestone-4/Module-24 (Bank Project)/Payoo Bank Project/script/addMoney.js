@@ -24,7 +24,7 @@ document.getElementById("add-money-btn").addEventListener("click",function(){
     if(pin == "2026"){
         alert(`Add Money Successful from ${bankAccount} at ${new Date()}`);
         setBalance(newBalance);
-        addHistory("Money Added", amount)
+        addHistory("opt-1", "Money Added", amount)
 
         // // 1. Get history Container
         // const history = document.getElementById("history-container");

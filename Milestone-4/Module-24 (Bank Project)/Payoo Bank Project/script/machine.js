@@ -39,7 +39,7 @@ function showOnly(id){
 
 }
 
-function addHistory(eventName, amount){
+function addHistory(img, eventName, amount){
     // let eventName = eventName
     const history = document.getElementById("history-container");
     const newHistory = document.createElement("div");
@@ -93,10 +93,10 @@ function addHistory(eventName, amount){
         <div class="transaction-card p-5 bg-base-100 flex justify-between items-center rounded-xl">
                 <div class="left flex flex-row gap-2">
                     <div class="w-11 p-2 bg-base-200 rounded-full flex justify-center items-center">
-                        <img src="./assets/opt-1.png" alt="">
+                        <img src="./assets/${img}.png" alt="">
                     </div>
                     <div>
-                        <h2 class="text- font-bold">${eventName} | TK ${amount}</h2>
+                        <h2 class="text- font-bold">${eventName} | Tk: ${amount}</h2>
                         <p class="text-neutral/80">${dayText} ${time}</p>
                     </div>
                 </div>
