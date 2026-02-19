@@ -27,10 +27,82 @@
 </head>
 <body class="min-h-screen max-w-md bg-base-200 mx-auto">
 
+    <header class="border-b-2 border-gray-300">
+        <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
+            <div class="left flex gap-1 items-center">
+                <div class="logo w-[60px]">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <div class="balance-info">
+                    <h2 class="text-2xl font-bold">$ <span id="balance">45000</span></h2>
+                    <p class="text-neutral/50">Available Balance</p>
+                </div>
+            </div>
+            <div class="right">
+                <a href="/index.html" class="btn btn-soft"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="w-11/12 mx-auto py-10 space-y-5">
+        <h2 class="text-3xl font-bold">Welcome to Pay<span class="text-primary">oo</span></h2>
+        <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
     
+        <div class="buttons grid grid-cols-3 gap-3">
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-1.png" alt="">
+                <p>Add Money</p>
+            </button>
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-2.png" alt="">
+                <p>Cashout</p>
+            </button>
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-3.png" alt="">
+                <p>Transfer Money</p>
+            </button>
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-4.png" alt="">
+                <p>Get Bonus</p>
+            </button>
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-5.png" alt="">
+                <p>Pay Bill</p>
+            </button>
+            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+                <img src="./assets/opt-6.png" alt="Transactions">
+                <p>Transactions</p>
+            </button>
+        </div>
+
+    </section>
 
 
-    <script src="./script/home.js"></script>
+    <section id="cashout" class="w-11/12 mx-auto py-5">
+        <h2 class="text-2xl font-bold mb-5">Cashout</h2>
+         <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Agent Number</label>
+                    <input id="cashout-number" maxlength="11" minlength="11" type="text" class="input rounded-full bg-base-200 w-full" placeholder="Enter your Agent Number" />
+
+                    <br>
+
+                    <label class="label text-neutral font-bold">Amount</label>
+                    <input id="cashout-amount" type="number" class="input rounded-full bg-base-200 w-full" placeholder="Enter withdraw amount" />
+
+                    <br>
+
+                    <label class="label text-neutral font-bold">4 Digit Pin</label>
+                    <input id="cashout-pin" maxlength="4" minlength="4" type="password" class="input rounded-full bg-base-200 w-full" placeholder="Enter 4 Digit Pin" />
+                    <button id="login-btn" class="btn btn-primary mt-4 rounded-full">Withdraw Money</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+
     
 </body>
 </html>
