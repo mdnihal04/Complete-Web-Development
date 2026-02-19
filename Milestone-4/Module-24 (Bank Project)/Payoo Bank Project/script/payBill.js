@@ -1,21 +1,27 @@
-document.getElementById("transfer-btn").addEventListener("click", function(){
-    const transferNumber = getValueFromInput("transfer-number");
-    if(transferNumber.length != 11){
-        alert("Invalid Agent Number");
+document.getElementById("pay-money-btn").addEventListener("click", function(){
+
+    const payBankAccount = getValueFromInput("pay-money-bank");
+    if(payBankAccount == "Select a Bank"){
+        alert("Please select a bank");
+        return;
+    }
+    const payNumber = getValueFromInput("pay-money-number");
+    if(payNumber.length != 11){
+        alert("Invalid Bank Account Number");
         return;
     }
 
-    const transferAmount = getValueFromInput("transfer-amount");
+    const payAmount = getValueFromInput("pay-money-amount");
 
     let balanceAmount = getBalanace();
-    const newBalance = balanceAmount - Number(transferAmount);
+    const newBalance = balanceAmount - Number(payAmount);
     if(newBalance < 0){
         alert("Invalid Amount");
         return;
     }
 
 
-    const pin = getValueFromInput("transfer-pin");
+    const pin = getValueFromInput("pay-money-pin");
     if(pin === "2026"){
         alert("Transfer Successful")
         setBalance(newBalance);
