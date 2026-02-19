@@ -9,13 +9,12 @@ document.getElementById("login-btn").addEventListener("click",function(){
 
     // 2. get the pin input
 
-    const pinNumber = document.getElementById("input-pin").value
-    console.log(pinNumber)
+    const pin = document.getElementById("input-pin").value
     // 3. match pin and mobile number
     
     
 
-    if(contactNumber=="01741815523" && pinNumber=="2004"){
+    if(contactNumber=="01741815523" && pin=="2004"){
         // 3-1. true ==> alert ==> homepage
         alert("Login Success");
         window.location.assign("/home.html");
