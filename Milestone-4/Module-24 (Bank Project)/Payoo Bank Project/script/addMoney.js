@@ -24,6 +24,22 @@ document.getElementById("add-money-btn").addEventListener("click",function(){
     if(pin == "2026"){
         alert(`Add Money Successful from ${bankAccount} at ${new Date()}`);
         setBalance(newBalance);
+
+        // 1. Get history Container
+        const history = document.getElementById("history-container");
+        // 2. Create new child div
+        const newHistory = document.createElement("div");
+        // 3. Add innerHtml in new div
+        newHistory.innerHTML=`
+         <div class="transaction-card p-5 bg-base-100">
+         Add Money Success From
+         ${bankAccount} , 
+         ACC-NO ${accNo} | at ${new Date()}
+         </div>`
+
+        // 4. Append child div to history/parent div
+        history.append(newHistory);
+
     }else{
         alert("Invalid Pin");
         return;

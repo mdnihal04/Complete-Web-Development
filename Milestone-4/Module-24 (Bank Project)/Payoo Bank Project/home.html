@@ -70,7 +70,7 @@
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-soft btn-primary">
+            <button onclick="showOnly('history')" class="btn flex-col h-full py-4 btn-soft btn-primary">
                 <img src="./assets/opt-6.png" alt="Transactions">
                 <p>Transactions</p>
             </button>
@@ -79,7 +79,7 @@
     </section>
 
 
-    <section id="add-money" class="w-11/12 mx-auto py-5">
+    <section id="add-money" class="w-11/12 mx-auto py-5 hidden" >
         <h2 class="text-2xl font-bold mb-5">Add Money</h2>
         <div class="card bg-base-100 w-full shadow rounded-2xl">
             <div class="card-body">
@@ -135,6 +135,12 @@
         </div>
     </section>
 
+    <section id="history" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-2xl font-bold mb-5">Transactions</h2>
+        <div id="history-container" class="space-y-5">
+            
+        </div>
+    </section>
 
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
