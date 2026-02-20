@@ -35,9 +35,9 @@
 
     <main class="w-[80%] mx-auto space-y-7">
         <div>
-            <button class="bg-black text-white cursor-pointer px-5 py-2" id="all-filter-button">All</button>
-            <button class="bg-gray-300 px-5 py-2 cursor-pointer" id="thriving-filter-button">Thriving</button>
-            <button class="bg-gray-300 px-5 py-2 cursor-pointer" id="struggling-filter-button">Struggling</button>
+            <button onclick="toggleStyle('all-filter-button')" class="bg-black text-white cursor-pointer px-5 py-2" id="all-filter-button">All</button>
+            <button onclick="toggleStyle('thriving-filter-button')" class="bg-gray-300 px-5 py-2 cursor-pointer" id="thriving-filter-button">Thriving</button>
+            <button onclick="toggleStyle('struggling-filter-button')" class="bg-gray-300 px-5 py-2 cursor-pointer" id="struggling-filter-button">Struggling</button>
         </div>
 
         <section id="all-cards" class="space-y-7">
